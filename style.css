@@ -1,5 +1,6 @@
 body{
     background-color: black;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #hero{
@@ -25,11 +26,37 @@ body{
     position: relative;
 }
 
+.nav-link{
+    position: relative;
+}
+
+.nav-link::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background: #d8c08a;
+    transition: .3s;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after{
+    width: 80%;
+}
+
 .hero-conteudo{
     position: relative;
     z-index: 2;
     max-width: 550px;
     margin-left: 100px;
+    transform: translateY(-40px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .hero-conteudo::before{
@@ -44,6 +71,97 @@ body{
         rgba(0,0,0,.5),
         transparent
     );
+}
+
+.frase-central{
+    font-family: 'Cinzel', serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 0.95;
+    color: #d8c08a;
+    letter-spacing: 2px;
+
+    text-align: center;
+    margin-bottom: 15px;
+    text-shadow:
+        0 0 4px rgba(214,179,106,.4),
+        0 0 12px rgba(214,179,106,.2);
+}
+
+.subtitulo-rpg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    width: 100%;
+
+    color: #c9a95c;
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+}
+
+.subtitulo-rpg span{
+    width: 120px;
+    height: 1px;
+    background: #c9a95c;
+}
+
+.frase-rpg{
+    max-width: 500px;
+
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #f2f2f2;
+
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.frase-secundaria{
+    max-width: 500px;
+
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #bdbdbd;
+
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.btn-warning{
+    background: linear-gradient(
+        to bottom,
+        #d4a63d,
+        #9a6d17
+    );
+
+    border: 2px solid #cfa44c;
+    color: #fff8e6;
+    padding: 10px 25px;
+    border-radius: 8px;
+
+    box-shadow:
+        0 0 15px rgba(212,166,61,.25);
+
+    align-self: center;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.bloco-title{
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+}
+
+.bloco-text,
+.lead,
+.footer-col p{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
 }
 
 .painel-rpg{
@@ -73,6 +191,7 @@ body{
     font-weight: bold;
     color: #CBBD93;
     margin-bottom: 10px;
+    font-family: 'Cinzel' ;
 }
 
 .painel-rpg .col{
@@ -99,7 +218,6 @@ body{
     border-top: none;
     position: relative;
 
-    position: relative;
     z-index: 1;
 
     color: white;
@@ -206,4 +324,17 @@ body{
     padding: 10px;
     color: #777;
     font-size: 13px;
+}
+
+h1, h2, h3, h4, .navbar, .btn{
+    font-family: 'Cinzel', serif;
+}
+
+p{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-link{
+    letter-spacing: 1px;
+    font-size: 0.95rem;
 }
