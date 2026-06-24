@@ -51,9 +51,9 @@ body{
     max-width: 1800px;
     height: 400px;
 
-    margin: -90px auto -100px auto;
+    margin: -90px auto 30px auto;
 
-    background: url("src/img/fundo-2.png") center/contain no-repeat; 
+    background: url("src/img/fundo-2.png") center/contain no-repeat;
 
     position: relative;
     z-index: 10;
@@ -93,4 +93,117 @@ body{
     padding-top: 90px;
     padding-left: 20px;
     padding-right: 30px;
+}
+
+#footer{
+    border-top: none;
+    position: relative;
+
+    position: relative;
+    z-index: 1;
+
+    color: white;
+    padding: 40px 0 20px;
+    margin-top: 0;
+
+    background-image:
+        url("src/img/castelo-footer.png");
+
+    background-size: 30%;
+    background-position: 95% 15%;
+    background-repeat: no-repeat;
+}
+
+#footer::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        #CBBD93,
+        transparent
+    );
+}
+
+.footer-container{
+    display: flex;
+    justify-content: flex-start;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+.footer-col{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 150px;
+    position: relative;
+    padding-right: 40px;
+}
+
+.footer-col:not(:last-child)::after{
+    content: "";
+    position: absolute;
+    right: -25px;
+    top: 10px;
+    width: 1px;
+    height: 80%;
+
+    background: linear-gradient(
+        transparent,
+        #5a5a5a,
+        transparent
+    );
+}
+
+.footer-col h4{
+    color: #CBBD93;
+    font-size: 14px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.footer-col a{
+    color: #aaa;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-col a:hover{
+    color: white;
+}
+
+.footer-col p{
+    color: #aaa;
+    margin: 0;
+    font-size: 14px;
+}
+
+.footer-logo{
+    width: 180px;
+    height: auto;
+}
+
+.redes{
+    display: flex;
+    gap: 15px;
+    font-size: 24px;
+}
+
+.redes a{
+    color: #c7c7c7;
+}
+
+.footer-bottom{
+    text-align: center;
+    border-top: 1px solid #222;
+    margin-top: 20px;
+    padding: 10px;
+    color: #777;
+    font-size: 13px;
 }
