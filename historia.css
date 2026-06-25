@@ -1,0 +1,104 @@
+body{
+    background-color: black;
+    font-family: 'Montserrat', sans-serif
+}
+
+.fundo-blur {
+    position: fixed;
+    inset: 0;
+    background: url("/src/img/fundo-dragao-2.jpg") center/cover no-repeat;
+    filter: blur(5px);
+    transform: scale(1.05); /* evita bordas vazadas do blur */
+    z-index: -1;
+    filter: grayscale(80%) contrast(100%);
+}
+
+/*FUNDO CASTELO*/
+.historia-container{
+    background-repeat: no-repeat;
+    background-size: 1200px auto;
+
+    background-position: center -100px; /* sobe apenas o castelo */
+
+    margin-top: -80px;
+    padding-top: 80px;
+    
+}
+
+.fundo-pg{
+    width: 90%;
+    max-width: 1800px;
+    height: 400px;
+
+    margin: 0 auto 30px auto; /* tira o espaço de cima */
+
+    position: relative;
+    top: -30px;
+}
+
+/*pergaminho*/
+#hero{
+    min-height: 700px;
+
+    background:
+        url("/src/img/Gemini_Generated_Image_7serlm7serlm7ser-removebg-preview.png"); 
+
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+
+/*A HISTORIA DO REINO*/
+.frase-principal{
+    font-family: 'Cinzel', serif;
+
+    position: relative;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 0.95;
+    color: #d8c08a;
+
+    text-shadow:
+        0 0 4px rgba(214,179,106,.4),
+        0 0 12px rgba(214,179,106,.2);
+}
+
+.frase-principal::before,
+.frase-principal::after{
+    content: "";
+    position: absolute;
+    left: 35%;
+    width: 30%;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        #CBBD93,
+        transparent
+    );
+}
+
+.frase-principal::before{
+    top: -15px;
+}
+
+.frase-principal::after{
+    bottom: -15px;
+}
+
+/*img personagens*/
+.img-lateral{
+    position: absolute;
+
+    left: calc(50% + 331px);
+    top: 50px;
+
+    width: 290px;
+}
