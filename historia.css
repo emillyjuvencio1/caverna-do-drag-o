@@ -1,82 +1,175 @@
 body{
-    background-color: black;
-    font-family: 'Montserrat', sans-serif
-}
-
-.fundo-blur {
-    position: fixed;
-    inset: 0;
-    background: url("/src/img/fundo-dragao-2.jpg") center/cover no-repeat;
-    filter: blur(5px);
-    transform: scale(1.05); /* evita bordas vazadas do blur */
-    z-index: -1;
-    filter: grayscale(80%) contrast(100%);
-}
-
-/*FUNDO CASTELO*/
-.historia-container{
-    background-repeat: no-repeat;
-    background-size: 1200px auto;
-
-    background-position: center -100px; /* sobe apenas o castelo */
-
-    margin-top: -80px;
-    padding-top: 80px;
-    
-}
-
-.fundo-pg{
-    width: 90%;
-    max-width: 1800px;
-    height: 400px;
-
-    margin: 0 auto 30px auto; /* tira o espaço de cima */
-
-    position: relative;
-    top: -30px;
-}
-
-/*pergaminho*/
-#hero{
-    min-height: 700px;
-
-    background:
-        url("/src/img/Gemini_Generated_Image_7serlm7serlm7ser-removebg-preview.png"); 
-
-    background-size: 50%;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    display: flex;
-    align-items: center;
+    margin: 0;
+    background: #000;
     color: white;
-    position: relative;
+    font-family: 'Montserrat', sans-serif;
 }
 
-/*A HISTORIA DO REINO*/
-.frase-principal{
-    font-family: 'Cinzel', serif;
+.navbar{
+    padding: 8px 0;
+}
 
-    position: relative;
+.historia{
+    min-height: 100vh;
+
+    background-image: url("src/img/img-bg-HISTORIA.png");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    padding: 40px 0 80px;
+}
+
+.titulo-historia{
     text-align: center;
-    margin-top: 60px;
-    font-size: 3rem;
-    font-weight: 700;
-    line-height: 0.95;
-    color: #d8c08a;
-
-    text-shadow:
-        0 0 4px rgba(214,179,106,.4),
-        0 0 12px rgba(214,179,106,.2);
+    margin: 70px 0 60px;
 }
 
-.frase-principal::before,
-.frase-principal::after{
+.titulo-historia h1{
+    display: inline-block;
+    position: relative;
+
+    margin: 0;
+    padding: 30px 0;
+
+    font-family: 'Cinzel', serif;
+    font-size: 3.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    line-height: 1.1;
+
+    color: #C7A45A;
+}
+
+.titulo-historia h1::before,
+.titulo-historia h1::after{
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 420px;
+    height: 2px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        #C7A45A,
+        transparent
+    );
+}
+
+.titulo-historia h1::before{
+    top: 0;
+}
+
+.titulo-historia h1::after{
+    bottom: 0;
+}
+
+.painel-historia{
+    width: min(1100px, 90%);
+    height: 650px;
+
+    margin: auto;
+
+    background: rgba(17,17,17,.92);
+
+    border: 1px solid #C7A45A;
+    border-radius: 18px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 50px;
+
+    box-shadow:
+        0 0 40px rgba(0,0,0,.6),
+        0 0 15px rgba(199,164,90,.15);
+}
+
+.painel-historia::-webkit-scrollbar{
+    width: 8px;
+}
+
+.painel-historia::-webkit-scrollbar-track{
+    background: transparent;
+    margin: 18px 0;
+}
+
+.painel-historia::-webkit-scrollbar-thumb{
+    background: linear-gradient(
+        #d7b56b,
+        #c7a45a,
+        #b08b42
+    );
+
+    border-radius: 30px;
+    border: 2px solid #111;
+}
+
+.painel-historia::-webkit-scrollbar-thumb:hover{
+    background: #d7b56b;
+}
+
+.painel-historia{
+    position: relative;
+}
+
+.painel-historia::before,
+.painel-historia::after{
+    content:"";
+    position:absolute;
+    width:30px;
+    height:30px;
+
+    border:2px solid #C7A45A;
+}
+
+.painel-historia::before{
+    top:-2px;
+    left:-2px;
+
+    border-right:none;
+    border-bottom:none;
+}
+
+.painel-historia::after{
+    bottom:-2px;
+    right:-2px;
+
+    border-left:none;
+    border-top:none;
+}
+
+#footer{
+    border-top: none;
+    position: relative;
+
+    z-index: 1;
+
+    color: white;
+    padding: 40px 0 20px;
+    margin-top: 0;
+
+    background-image:
+        url("src/img/castelo-footer.png");
+
+    background-size: 30%;
+    background-position: 95% 15%;
+    background-repeat: no-repeat;
+}
+
+#footer::before{
     content: "";
     position: absolute;
-    left: 35%;
-    width: 30%;
+    top: 0;
+    left: 10%;
+    width: 80%;
     height: 1px;
+
     background: linear-gradient(
         to right,
         transparent,
@@ -85,20 +178,93 @@ body{
     );
 }
 
-.frase-principal::before{
-    top: -15px;
+.footer-container{
+    display: flex;
+    justify-content: flex-start;
+    gap: 80px;
+    flex-wrap: wrap;
 }
 
-.frase-principal::after{
-    bottom: -15px;
+.footer-col{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 150px;
+    position: relative;
+    padding-right: 40px;
 }
 
-/*img personagens*/
-.img-lateral{
+.footer-col:not(:last-child)::after{
+    content: "";
     position: absolute;
+    right: -25px;
+    top: 10px;
+    width: 1px;
+    height: 80%;
 
-    left: calc(50% + 331px);
-    top: 50px;
+    background: linear-gradient(
+        transparent,
+        #5a5a5a,
+        transparent
+    );
+}
 
-    width: 290px;
+.footer-col h4{
+    color: #CBBD93;
+    font-size: 14px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.footer-col a{
+    color: #aaa;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-col a:hover{
+    color: white;
+}
+
+.footer-col p{
+    color: #aaa;
+    margin: 0;
+    font-size: 14px;
+}
+
+.footer-logo{
+    width: 180px;
+    height: auto;
+}
+
+.redes{
+    display: flex;
+    gap: 15px;
+    font-size: 24px;
+}
+
+.redes a{
+    color: #c7c7c7;
+}
+
+.footer-bottom{
+    text-align: center;
+    border-top: 1px solid #222;
+    margin-top: 20px;
+    padding: 10px;
+    color: #777;
+    font-size: 13px;
+}
+
+h1, h2, h3, h4, .navbar, .btn{
+    font-family: 'Cinzel', serif;
+}
+
+p{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-link{
+    letter-spacing: 1px;
+    font-size: 0.95rem;
 }
