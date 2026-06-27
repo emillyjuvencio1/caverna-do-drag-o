@@ -9,7 +9,7 @@ body{
     padding: 8px 0;
 }
 
-.historia{
+.regras{
     min-height: 100vh;
 
     background-image: url("src/img/img-bg-HISTORIA.png");
@@ -21,12 +21,12 @@ body{
     padding: 40px 0 80px;
 }
 
-.titulo-historia{
+.titulo-regras{
     text-align: center;
-    margin: 70px 0 60px;
+    margin: 30px 0 60px;
 }
 
-.titulo-historia h1{
+.titulo-regras h1{
     display: inline-block;
     position: relative;
 
@@ -42,8 +42,8 @@ body{
     color: #C7A45A;
 }
 
-.titulo-historia h1::before,
-.titulo-historia h1::after{
+.titulo-regras h1::before,
+.titulo-regras h1::after{
     content: "";
 
     position: absolute;
@@ -61,65 +61,38 @@ body{
     );
 }
 
-.titulo-historia h1::before{
+.titulo-regras h1::before{
     top: 0;
 }
 
-.titulo-historia h1::after{
+.titulo-regras h1::after{
     bottom: 0;
 }
 
-.painel-historia{
-    width: min(1100px, 90%);
-    height: 650px;
-
+.painel-regras{
+    width: min(1200px, 92%);
+    min-height: 650px;
+    
     margin: auto;
-
+    
     background: rgba(17,17,17,.92);
-
+    
     border: 1px solid #C7A45A;
     border-radius: 18px;
-
-    overflow-y: auto;
-    overflow-x: hidden;
-
+    
     padding: 50px;
-
+    
     box-shadow:
         0 0 40px rgba(0,0,0,.6),
         0 0 15px rgba(199,164,90,.15);
 }
 
-.painel-historia::-webkit-scrollbar{
-    width: 8px;
-}
-
-.painel-historia::-webkit-scrollbar-track{
-    background: transparent;
-    margin: 18px 0;
-}
-
-.painel-historia::-webkit-scrollbar-thumb{
-    background: linear-gradient(
-        #d7b56b,
-        #c7a45a,
-        #b08b42
-    );
-
-    border-radius: 30px;
-    border: 2px solid #111;
-}
-
-.painel-historia::-webkit-scrollbar-thumb:hover{
-    background: #d7b56b;
-}
-
-.painel-historia{
+.painel-regras{
     position: relative;
 }
 
-.painel-historia::before,
-.painel-historia::after{
+.painel-regras::before,
+.painel-regras::after{
     content:"";
     position:absolute;
     width:30px;
@@ -128,7 +101,7 @@ body{
     border:2px solid #C7A45A;
 }
 
-.painel-historia::before{
+.painel-regras::before{
     top:-2px;
     left:-2px;
 
@@ -136,12 +109,110 @@ body{
     border-bottom:none;
 }
 
-.painel-historia::after{
+.painel-regras::after{
     bottom:-2px;
     right:-2px;
 
     border-left:none;
     border-top:none;
+}
+
+.introducao p{
+    color: #d8d8d8;
+    line-height: 1.9;
+    text-align: justify;
+}
+
+.introducao h2,
+.regra h3,
+.conselho h2{
+    color:#C7A45A;
+    margin-bottom:15px;
+}
+
+.introducao{
+    margin-bottom:40px;
+}
+
+.regra{
+    padding:20px 0;
+}
+
+.regra h3{
+    font-size:1.4rem;
+}
+
+.regra i{
+    margin-right:10px;
+    color:#C7A45A;
+}
+
+.regra p{
+    color:#d8d8d8;
+    line-height:1.8;
+}
+
+hr{
+    border:none;
+    height:1px;
+    background:linear-gradient(
+        to right,
+        transparent,
+        #C7A45A,
+        transparent
+    );
+    margin:30px 0;
+}
+
+.conselho{
+    margin-top:50px;
+    padding:35px;
+    border:1px solid rgba(199,164,90,.4);
+    border-radius:15px;
+    background:rgba(255,255,255,.03);
+    text-align:center;
+}
+
+.conselho blockquote{
+    margin:20px 0 0;
+    font-size:1.2rem;
+    color:#f5f5f5;
+    font-style:italic;
+    line-height:1.8;
+}
+
+.btn-aventura{
+    display: inline-block;
+    margin-top: 40px;
+    padding: 14px 40px;
+    background: linear-gradient(
+        to bottom,
+        #d4a63d,
+        #9a6d17
+    );
+    border: 2px solid #cfa44c;
+    border-radius: 8px;
+    color: #fff8e6;
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+    box-shadow:
+        0 0 15px rgba(212,166,61,.25);
+    transition: all .3s ease;
+}
+
+.btn-aventura:hover{
+    background: linear-gradient(
+        to bottom,
+        #e2b44a,
+        #b07b1a
+    );
+    color: #fff8e6;
+    transform: translateY(-3px);
+    box-shadow:
+        0 0 25px rgba(212,166,61,.45);
 }
 
 #footer{
@@ -267,34 +338,4 @@ p{
 .nav-link{
     letter-spacing: 1px;
     font-size: 0.95rem;
-}
-
-.btn-regras{
-    display: inline-block;
-    margin-top: 35px;
-    padding: 14px 40px;
-
-    background: linear-gradient(to bottom,#d4a63d,#9a6d17) !important;
-    border: 2px solid #cfa44c !important;
-    border-radius: 8px;
-
-    color: #fff8e6 !important;
-    text-decoration: none;
-
-    font-family: 'Cinzel', serif;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-
-    box-shadow: 0 0 18px rgba(199,164,90,.25);
-    transition: .3s;
-}
-
-.btn-regras:hover{
-    background: linear-gradient(to bottom,#e3b653,#b37d1b) !important;
-    border-color: #d8b15d !important;
-    color: #fff8e6 !important;
-
-    transform: translateY(-3px);
-    box-shadow: 0 0 22px rgba(199,164,90,.45);
 }
