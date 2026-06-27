@@ -1,0 +1,381 @@
+body{
+    margin: 0;
+    background: #000;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar{
+    padding: 8px 0;
+}
+
+.classes{
+    min-height: 100vh;
+
+    background-image: url("src/img/img-bg-HISTORIA.png");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    padding: 40px 0 80px;
+}
+
+.titulo-classes{
+    text-align: center;
+    margin: 30px 0 60px;
+}
+
+.titulo-classes h1{
+    display: inline-block;
+    position: relative;
+
+    margin: 0;
+    padding: 30px 0;
+
+    font-family: 'Cinzel', serif;
+    font-size: 3.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    line-height: 1.1;
+
+    color: #C7A45A;
+}
+
+.titulo-classes h1::before,
+.titulo-classes h1::after{
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 420px;
+    height: 2px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        #C7A45A,
+        transparent
+    );
+}
+
+.titulo-classes h1::before{
+    top: 0;
+}
+
+.titulo-classes h1::after{
+    bottom: 0;
+}
+
+.painel-classes{
+    width: min(1200px, 92%);
+    min-height: 650px;
+    
+    margin: auto;
+    
+    background: rgba(17,17,17,.92);
+    
+    border: 1px solid #C7A45A;
+    border-radius: 18px;
+    
+    padding: 50px;
+    
+    box-shadow:
+        0 0 40px rgba(0,0,0,.6),
+        0 0 15px rgba(199,164,90,.15);
+}
+
+.painel-classes{
+    position: relative;
+}
+
+.painel-classes::before,
+.painel-classes::after{
+    content:"";
+    position:absolute;
+    width:30px;
+    height:30px;
+
+    border:2px solid #C7A45A;
+}
+
+.painel-classes::before{
+    top:-2px;
+    left:-2px;
+
+    border-right:none;
+    border-bottom:none;
+}
+
+.painel-classes::after{
+    bottom:-2px;
+    right:-2px;
+
+    border-left:none;
+    border-top:none;
+}
+
+.introducao p{
+    color: #d8d8d8;
+    line-height: 1.9;
+    text-align: justify;
+}
+
+.introducao h2,
+.classes h3,
+.conselho h2{
+    color:#C7A45A;
+    margin-bottom:15px;
+}
+
+.introducao{
+    margin-bottom:40px;
+}
+
+.classes{
+    padding:20px 0;
+}
+
+.classes h3{
+    font-size:1.4rem;
+}
+
+.classes i{
+    margin-right:10px;
+    color:#C7A45A;
+}
+
+.classes p{
+    color:#d8d8d8;
+    line-height:1.8;
+}
+
+hr{
+    border:none;
+    height:1px;
+    background:linear-gradient(
+        to right,
+        transparent,
+        #C7A45A,
+        transparent
+    );
+    margin:30px 0;
+}
+
+.conselho{
+    margin-top:50px;
+    padding:35px;
+    border:1px solid rgba(199,164,90,.4);
+    border-radius:15px;
+    background:rgba(255,255,255,.03);
+    text-align:center;
+}
+
+.conselho blockquote{
+    margin:20px 0 0;
+    font-size:1.2rem;
+    color:#f5f5f5;
+    font-style:italic;
+    line-height:1.8;
+}
+
+.introducao{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.introducao h2{
+    color:#C7A45A;
+    margin-bottom:15px;
+}
+
+.classe{
+    display:flex;
+    align-items:center;
+    gap:35px;
+    padding:25px 0;
+}
+
+.classe img{
+    width:170px;
+    border-radius:12px;
+    border:2px solid #C7A45A;
+    box-shadow:0 0 15px rgba(199,164,90,.25);
+}
+
+.classe h3{
+    color:#C7A45A;
+    margin-bottom:10px;
+}
+
+.classe p{
+    color:#d8d8d8;
+    line-height:1.8;
+}
+
+.btn-classes{
+    display:inline-block;
+    margin-top:40px;
+    padding:14px 40px;
+
+    background:linear-gradient(to bottom,#d4a63d,#9a6d17);
+    border:2px solid #cfa44c;
+    border-radius:8px;
+
+    color:#fff8e6;
+    text-decoration:none;
+
+    font-family:'Cinzel',serif;
+    font-weight:700;
+    letter-spacing:2px;
+
+    transition:.3s;
+    box-shadow:0 0 18px rgba(199,164,90,.25);
+}
+
+.btn-classes:hover{
+    background:linear-gradient(to bottom,#e3b653,#b37d1b);
+    color:#fff8e6;
+    transform:translateY(-3px);
+    box-shadow:0 0 22px rgba(199,164,90,.45);
+}
+
+@media (max-width:768px){
+
+    .classe{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .classe img{
+        width:220px;
+    }
+
+}
+
+#footer{
+    border-top: none;
+    position: relative;
+
+    z-index: 1;
+
+    color: white;
+    padding: 40px 0 20px;
+    margin-top: 0;
+
+    background-image:
+        url("src/img/castelo-footer.png");
+
+    background-size: 30%;
+    background-position: 95% 15%;
+    background-repeat: no-repeat;
+}
+
+#footer::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        #CBBD93,
+        transparent
+    );
+}
+
+.footer-container{
+    display: flex;
+    justify-content: flex-start;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+.footer-col{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 150px;
+    position: relative;
+    padding-right: 40px;
+}
+
+.footer-col:not(:last-child)::after{
+    content: "";
+    position: absolute;
+    right: -25px;
+    top: 10px;
+    width: 1px;
+    height: 80%;
+
+    background: linear-gradient(
+        transparent,
+        #5a5a5a,
+        transparent
+    );
+}
+
+.footer-col h4{
+    color: #CBBD93;
+    font-size: 14px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.footer-col a{
+    color: #aaa;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-col a:hover{
+    color: white;
+}
+
+.footer-col p{
+    color: #aaa;
+    margin: 0;
+    font-size: 14px;
+}
+
+.footer-logo{
+    width: 180px;
+    height: auto;
+}
+
+.redes{
+    display: flex;
+    gap: 15px;
+    font-size: 24px;
+}
+
+.redes a{
+    color: #c7c7c7;
+}
+
+.footer-bottom{
+    text-align: center;
+    border-top: 1px solid #222;
+    margin-top: 20px;
+    padding: 10px;
+    color: #777;
+    font-size: 13px;
+}
+
+h1, h2, h3, h4, .navbar, .btn{
+    font-family: 'Cinzel', serif;
+}
+
+p{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-link{
+    letter-spacing: 1px;
+    font-size: 0.95rem;
+}
