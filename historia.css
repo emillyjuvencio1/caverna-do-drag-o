@@ -9,6 +9,26 @@ body{
     padding: 8px 0;
 }
 
+.nav-link{
+    position: relative;
+}
+
+.nav-link::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background: #d8c08a;
+    transition: .3s;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after{
+    width: 80%;
+}
+
 .historia{
     min-height: 100vh;
 
