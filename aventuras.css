@@ -1,0 +1,411 @@
+body{
+    margin: 0;
+    background: #000;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar{
+    padding: 8px 0;
+}
+
+.aventuras{
+    min-height: 100vh;
+
+    background-image: url("src/img/img-bg-HISTORIA.png");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    padding: 40px 0 80px;
+}
+
+.titulo-aventuras{
+    text-align: center;
+    margin: 30px 0 60px;
+}
+
+.titulo-aventuras h1{
+    display: inline-block;
+    position: relative;
+
+    margin: 0;
+    padding: 30px 0;
+
+    font-family: 'Cinzel', serif;
+    font-size: 3.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    line-height: 1.1;
+
+    color: #C7A45A;
+}
+
+.titulo-aventuras h1::before,
+.titulo-aventuras h1::after{
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 420px;
+    height: 2px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        #C7A45A,
+        transparent
+    );
+}
+
+.titulo-aventuras h1::before{
+    top: 0;
+}
+
+.titulo-aventuras h1::after{
+    bottom: 0;
+}
+
+.painel-aventuras{
+    width: min(1200px, 92%);
+    min-height: 650px;
+    
+    margin: auto;
+    
+    background: rgba(17,17,17,.92);
+    
+    border: 1px solid #C7A45A;
+    border-radius: 18px;
+    
+    padding: 50px;
+    
+    box-shadow:
+        0 0 40px rgba(0,0,0,.6),
+        0 0 15px rgba(199,164,90,.15);
+}
+
+.painel-aventuras{
+    position: relative;
+}
+
+.painel-aventuras::before,
+.painel-aventuras::after{
+    content:"";
+    position:absolute;
+    width:30px;
+    height:30px;
+    border:2px solid #C7A45A;
+}
+
+.painel-aventuras::before{
+    top:-2px;
+    left:-2px;
+
+    border-right:none;
+    border-bottom:none;
+}
+
+.painel-aventuras::after{
+    bottom:-2px;
+    right:-2px;
+
+    border-left:none;
+    border-top:none;
+}
+
+/* INTRODUÇÃO */
+.introducao{
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.introducao h2{
+    color: #C7A45A;
+    margin-bottom: 15px;
+}
+
+.introducao p{
+    color: #d8d8d8;
+    max-width: 850px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+/* GRID DOS CARDS */
+.row{
+    row-gap: 30px;
+}
+
+/* CARD */
+.card-aventura{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+
+    background: rgba(255,255,255,.03);
+    border:1px solid rgba(199,164,90,.35);
+    border-radius:15px;
+    padding:22px;
+    text-align:center;
+    transition:.35s;
+}
+
+.card-aventura:hover{
+    transform: translateY(-8px);
+    border-color: #C7A45A;
+    box-shadow: 0 0 25px rgba(199,164,90,.25);
+}
+
+.card-aventura img{
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 18px;
+}
+
+.card-aventura h3{
+    color: #C7A45A;
+    font-size: 1.45rem;
+    margin-bottom: 12px;
+}
+
+.card-aventura p{
+    color: #d5d5d5;
+    line-height: 1.7;
+    min-height: 95px;
+}
+
+.card-aventura .btn-rpg{
+    margin-top: auto;
+    margin-bottom: 5px;
+}
+
+/* pop-up */
+.modal-content{
+    background: #111;
+    color: white;
+    border: 2px solid #C7A45A;
+    border-radius: 15px;
+}
+
+.modal-header{
+    border-bottom: 1px solid rgba(199,164,90,.35);
+}
+
+.modal-footer{
+    border-top: 1px solid rgba(199,164,90,.35);
+}
+
+.modal-title{
+    color: #C7A45A;
+    font-family: 'Cinzel', serif;
+}
+
+.modal-body p{
+    line-height: 1.8;
+    color: #d8d8d8;
+}
+
+.modal-body strong{
+    color: #C7A45A;
+}
+
+.modal-content{
+    box-shadow:0 0 35px rgba(199,164,90,.35);
+}
+
+/* RESPONSIVO */
+@media (max-width:991px){
+
+    .card-aventura img{
+        height: 220px;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .painel-aventuras{
+        padding: 30px;
+    }
+
+    .titulo-aventuras h1{
+        font-size: 2.8rem;
+    }
+
+}
+
+@media (max-width:576px){
+
+    .card-aventura{
+        padding: 18px;
+    }
+
+    .card-aventura img{
+        height: 180px;
+    }
+
+}
+
+.btn-rpg{
+    display: inline-block;
+    margin-top: 40px;
+    padding: 14px 40px;
+    background: linear-gradient(
+        to bottom,
+        #d4a63d,
+        #9a6d17
+    );
+    border: 2px solid #cfa44c;
+    border-radius: 8px;
+    color: #fff8e6;
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+    box-shadow:
+        0 0 15px rgba(212,166,61,.25);
+    transition: all .3s ease;
+}
+
+.btn-rpg:hover{
+    background: linear-gradient(
+        to bottom,
+        #e2b44a,
+        #b07b1a
+    );
+    color: #fff8e6;
+    transform: translateY(-3px);
+    box-shadow:
+        0 0 25px rgba(212,166,61,.45);
+}
+
+#footer{
+    border-top: none;
+    position: relative;
+
+    z-index: 1;
+
+    color: white;
+    padding: 40px 0 20px;
+    margin-top: 0;
+
+    background-image:
+        url("src/img/castelo-footer.png");
+
+    background-size: 30%;
+    background-position: 95% 15%;
+    background-repeat: no-repeat;
+}
+
+#footer::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        #CBBD93,
+        transparent
+    );
+}
+
+.footer-container{
+    display: flex;
+    justify-content: flex-start;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+.footer-col{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 150px;
+    position: relative;
+    padding-right: 40px;
+}
+
+.footer-col:not(:last-child)::after{
+    content: "";
+    position: absolute;
+    right: -25px;
+    top: 10px;
+    width: 1px;
+    height: 80%;
+
+    background: linear-gradient(
+        transparent,
+        #5a5a5a,
+        transparent
+    );
+}
+
+.footer-col h4{
+    color: #CBBD93;
+    font-size: 14px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.footer-col a{
+    color: #aaa;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-col a:hover{
+    color: white;
+}
+
+.footer-col p{
+    color: #aaa;
+    margin: 0;
+    font-size: 14px;
+}
+
+.footer-logo{
+    width: 180px;
+    height: auto;
+}
+
+.redes{
+    display: flex;
+    gap: 15px;
+    font-size: 24px;
+}
+
+.redes a{
+    color: #c7c7c7;
+}
+
+.footer-bottom{
+    text-align: center;
+    border-top: 1px solid #222;
+    margin-top: 20px;
+    padding: 10px;
+    color: #777;
+    font-size: 13px;
+}
+
+h1, h2, h3, h4, .navbar, .btn{
+    font-family: 'Cinzel', serif;
+}
+
+p{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-link{
+    letter-spacing: 1px;
+    font-size: 0.95rem;
+}
