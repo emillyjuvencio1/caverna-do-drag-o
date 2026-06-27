@@ -181,7 +181,7 @@ hr{
     line-height:1.8;
 }
 
-.btn-aventura{
+.btn-rpg{
     display: inline-block;
     margin-top: 40px;
     padding: 14px 40px;
@@ -203,7 +203,7 @@ hr{
     transition: all .3s ease;
 }
 
-.btn-aventura:hover{
+.btn-rpg:hover{
     background: linear-gradient(
         to bottom,
         #e2b44a,

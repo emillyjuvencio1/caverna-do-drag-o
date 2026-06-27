@@ -269,7 +269,7 @@ p{
     font-size: 0.95rem;
 }
 
-.btn-regras{
+.btn-rpg{
     display: inline-block;
     margin-top: 35px;
     padding: 14px 40px;
@@ -290,7 +290,7 @@ p{
     transition: .3s;
 }
 
-.btn-regras:hover{
+.btn-rpg:hover{
     background: linear-gradient(to bottom,#e3b653,#b37d1b) !important;
     border-color: #d8b15d !important;
     color: #fff8e6 !important;
