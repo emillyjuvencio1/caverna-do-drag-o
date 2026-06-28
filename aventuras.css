@@ -9,6 +9,10 @@ body{
     padding: 8px 0;
 }
 
+#logo-site{
+    width:180px;
+}
+
 .nav-link{
     position: relative;
 }
@@ -36,7 +40,6 @@ body{
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
-    background-attachment: fixed;
 
     padding: 40px 0 80px;
 }
@@ -54,7 +57,7 @@ body{
     padding: 30px 0;
 
     font-family: 'Cinzel', serif;
-    font-size: 3.8rem;
+    font-size: clamp(2rem, 6vw, 3.8rem);
     font-weight: 700;
     letter-spacing: 3px;
     line-height: 1.1;
@@ -70,7 +73,7 @@ body{
     left: 50%;
     transform: translateX(-50%);
 
-    width: 420px;
+    width:min(420px,80vw);
     height: 2px;
 
     background: linear-gradient(
@@ -196,7 +199,7 @@ body{
 .card-aventura p{
     color: #d5d5d5;
     line-height: 1.7;
-    min-height: 95px;
+    height: auto;
 }
 
 .card-aventura .btn-rpg{
@@ -238,11 +241,44 @@ body{
     box-shadow:0 0 35px rgba(199,164,90,.35);
 }
 
+.btn-close{
+    filter: sepia(1) saturate(6) hue-rotate(5deg) brightness(1.1);
+    filter: invert(1);
+}
+
 /* RESPONSIVO */
 @media (max-width:991px){
 
-    .card-aventura img{
-        height: 220px;
+    #footer{
+        background-image: none;
+        background-size: initial;
+        background-position: center;
+    }
+
+    .footer-container{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 35px;
+    }
+
+    .footer-col{
+        align-items: center;
+        padding-right: 0;
+        min-width: auto;
+    }
+
+    .footer-col:not(:last-child)::after{
+        display: none;
+    }
+
+    .footer-logo{
+        width: 150px;
+    }
+
+    .redes{
+        justify-content: center;
     }
 
 }
@@ -255,6 +291,10 @@ body{
 
     .titulo-aventuras h1{
         font-size: 2.8rem;
+    }
+
+    .aventuras{
+        background-attachment: scroll;
     }
 
 }

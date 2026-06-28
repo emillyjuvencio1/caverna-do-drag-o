@@ -50,7 +50,7 @@ body{
     position: relative;
     z-index: 2;
     max-width: 550px;
-    margin-left: 100px;
+    margin-left: 0px;
     transform: translateY(-40px);
 
     display: flex;
@@ -162,57 +162,167 @@ body{
 .footer-col p{
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
+    color: white;
+}
+
+.introducao{
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.introducao h2{
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    color: #C7A45A;
+    margin-bottom: 18px;
+}
+
+.introducao p{
+    max-width: 950px;
+    margin: 0 auto;
+    color: #d8d8d8;
+    line-height: 1.8;
+    font-size: 1.05rem;
 }
 
 .painel-rpg{
-    width: 90%;
-    max-width: 1800px;
-    height: 400px;
+    width:min(1200px,92%);
+    margin:-80px auto 40px;
 
-    margin: -90px auto 30px auto;
+    background:rgba(17,17,17,.92);
 
-    background: url("src/img/fundo-2.png") center/contain no-repeat;
+    border:1px solid #C7A45A;
+    border-radius:18px;
 
-    position: relative;
-    z-index: 10;
+    padding:50px;
+
+    position:relative;
+
+    box-shadow:
+        0 0 40px rgba(0,0,0,.6),
+        0 0 15px rgba(199,164,90,.15);
 }
 
-.painel-rpg img{
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    left: 20px;
-    margin-bottom: 10px;
-    margin-top: 10px;
+.painel-rpg::before,
+.painel-rpg::after{
+    content:"";
+    position:absolute;
+    width:30px;
+    height:30px;
+    border:2px solid #C7A45A;
 }
 
-.painel-rpg h4{
-    font-size: 1rem;
-    font-weight: bold;
-    color: #CBBD93;
-    margin-bottom: 10px;
-    font-family: 'Cinzel' ;
+.painel-rpg::before{
+    top:-2px;
+    left:-2px;
+    border-right:none;
+    border-bottom:none;
+}
+
+.painel-rpg::after{
+    bottom:-2px;
+    right:-2px;
+    border-left:none;
+    border-top:none;
 }
 
 .painel-rpg .col{
-    padding-top: 30px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding:20px;
+}
+
+.painel-rpg img{
+    width:60px;
+    height:60px;
+    margin-bottom:15px;
+}
+
+.painel-rpg h4{
+    color:#C7A45A;
+    margin-bottom:12px;
 }
 
 .painel-rpg p{
-    font-size: small;
-    line-height: 1.2;
-    max-width: 150px;
-    margin: 0 auto;
-    color: #FFFFE3;
+    max-width:250px;
+    margin:auto;
+    line-height:1.6;
 }
 
-.painel-rpg .row{
-    padding-top: 90px;
-    padding-left: 20px;
-    padding-right: 30px;
+/*responsividade*/
+@media (max-width:768px){
+
+    /* Hero */
+    #hero{
+        background:
+            linear-gradient(
+                rgba(0,0,0,.85),
+                rgba(0,0,0,.85)
+            ),
+            url("src/img/fundo-1.jpg");
+
+        background-position:center;
+        background-size:cover;
+        text-align:center;
+    }
+
+    .hero-conteudo{
+        max-width:100%;
+        transform:none;
+        padding:0 15px;
+    }
+
+    .frase-central{
+        font-size:3rem;
+    }
+
+    .subtitulo-rpg{
+        font-size:1.5rem;
+    }
+
+    .subtitulo-rpg span{
+        width:60px;
+    }
+
+    .frase-rpg,
+    .frase-secundaria{
+        text-align:center;
+    }
+
+    /* Painel */
+    .painel-rpg{
+        width:95%;
+        margin-top:20px;
+        padding:30px 20px;
+    }
+
+    .painel-rpg .row{
+        padding:0;
+    }
+
+    .painel-rpg .col-12,
+    .painel-rpg .col-sm-6,
+    .painel-rpg .col-lg-4{
+        margin-bottom:30px;
+    }
+
+    /* Footer */
+    .footer-container{
+        flex-direction:column;
+        gap:40px;
+        text-align:center;
+        align-items:center;
+    }
+
+    .footer-col{
+        padding-right:0;
+    }
+
+    .footer-col::after{
+        display:none;
+    }
+
 }
+
+
 
 #footer{
     border-top: none;

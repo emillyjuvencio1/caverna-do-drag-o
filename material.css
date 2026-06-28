@@ -202,8 +202,30 @@ body{
 /* RESPONSIVO */
 @media (max-width:991px){
 
-    .card-extra img{
-        height: 220px;
+    #footer{
+        background-image: none;
+    }
+
+    .footer-container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 35px;
+    }
+
+    .footer-col{
+        align-items: center;
+        padding-right: 0;
+        min-width: auto;
+    }
+
+    .footer-col:not(:last-child)::after{
+        display: none;
+    }
+
+    .redes{
+        justify-content: center;
     }
 
 }
@@ -211,22 +233,49 @@ body{
 @media (max-width:768px){
 
     .painel-downloads{
-        padding: 30px;
+        padding:30px;
     }
 
     .titulo-downloads h1{
-        font-size: 2.8rem;
+        font-size:2.8rem;
     }
 
     .material{
-    flex-direction:column;
-    text-align:center;
-}
+        flex-direction:column;
+        text-align:center;
+        gap:30px;
+    }
+
+    .material-info{
+        text-align:center;
+    }
+
+    .material-img img{
+        max-width:260px;
+    }
 
     .info-grid{
         grid-template-columns:1fr;
     }
 
+    #footer{
+        background-image:none;
+    }
+
+    .footer-container{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+        gap:40px;
+    }
+
+    .footer-col{
+        padding-right:0;
+    }
+
+    .footer-col::after{
+        display:none;
+    }
 }
 
 @media (max-width:576px){
@@ -443,21 +492,4 @@ p{
     grid-template-columns:repeat(2,1fr);
     gap:18px;
     margin:30px 0;
-}
-
-.info-grid div{
-    background:rgba(255,255,255,.04);
-    border:1px solid rgba(199,164,90,.25);
-    border-radius:10px;
-    padding:15px;
-}
-
-.info-grid strong{
-    display:block;
-    color:#C7A45A;
-    margin-bottom:6px;
-}
-
-.info-grid span{
-    color:#ddd;
 }

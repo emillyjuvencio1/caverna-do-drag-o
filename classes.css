@@ -31,7 +31,6 @@ body{
 
 .classes{
     min-height: 100vh;
-
     background-image: url("src/img/img-bg-HISTORIA.png");
     background-size: cover;
     background-position: center top;
@@ -54,7 +53,7 @@ body{
     padding: 30px 0;
 
     font-family: 'Cinzel', serif;
-    font-size: 3.8rem;
+    font-size: clamp(2rem, 6vw, 3.8rem);
     font-weight: 700;
     letter-spacing: 3px;
     line-height: 1.1;
@@ -152,10 +151,6 @@ body{
 
 .introducao{
     margin-bottom:40px;
-}
-
-.classes{
-    padding:20px 0;
 }
 
 .classes h3{
@@ -262,17 +257,82 @@ hr{
     box-shadow:0 0 22px rgba(199,164,90,.45);
 }
 
-@media (max-width:768px){
+@media (max-width: 768px){
+
+    .titulo-classes h1{
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+    }
+
+    .titulo-classes h1::before,
+    .titulo-classes h1::after{
+        width: 260px;
+    }
+
+    .painel-classes{
+        padding: 25px;
+        width: 95%;
+    }
 
     .classe{
-        flex-direction:column;
-        text-align:center;
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
     }
 
     .classe img{
-        width:220px;
+        width: 200px;
     }
 
+    .btn-classes{
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-container{
+        gap: 40px;
+    }
+
+    .footer-col{
+        min-width: 100%;
+        padding-right: 0;
+    }
+
+    .footer-col::after{
+        display: none;
+    }
+}
+
+@media (max-width: 480px){
+
+    .titulo-classes h1{
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+
+    .painel-classes{
+        padding: 18px;
+        width: 92%;
+    }
+
+    .classe{
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .classe img{
+        width: 160px;
+    }
+
+    .classe h3{
+        font-size: 1.1rem;
+    }
+
+    .classe p{
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
 }
 
 #footer{

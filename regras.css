@@ -235,6 +235,89 @@ hr{
         0 0 25px rgba(212,166,61,.45);
 }
 
+@media (max-width: 768px){
+
+    .regras{
+        background-attachment: scroll;
+    }
+
+    .titulo-regras h1{
+        font-size: 2.4rem;
+        letter-spacing: 2px;
+    }
+
+    .titulo-regras h1::before,
+    .titulo-regras h1::after{
+        width: 80vw;
+    }
+
+    .painel-regras{
+        padding: 25px;
+    }
+
+    .regra h3{
+        font-size: 1.1rem;
+    }
+
+    .conselho blockquote{
+        font-size: 1rem;
+    }
+
+    .footer-container{
+        gap: 40px;
+    }
+
+    .footer-col{
+        min-width: 100%;
+        padding-right: 0;
+    }
+
+    .footer-col:not(:last-child)::after{
+        display: none;
+    }
+
+    .btn-rpg{
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px){
+
+    .titulo-regras h1{
+        font-size: 1.9rem;
+        padding: 20px 0;
+    }
+
+    .painel-regras{
+        padding: 18px;
+        border-radius: 12px;
+    }
+
+    .introducao p,
+    .regra p{
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .regra h3{
+        font-size: 1rem;
+    }
+
+    .conselho{
+        padding: 20px;
+    }
+
+    .conselho blockquote{
+        font-size: 0.95rem;
+    }
+
+    .btn-rpg{
+        font-size: 0.9rem;
+        padding: 12px 20px;
+    }
+}
+
 #footer{
     border-top: none;
     position: relative;
