@@ -32,16 +32,6 @@ if (historiaContainer) {
         controles.appendChild(indicador);
         historiaContainer.appendChild(controles);
 
-        const atualizarTela = () => {
-            capitulos.forEach((capitulo, index) => {
-                capitulo.style.display = index === capituloAtual ? "block" : "none";
-            });
-            botaoAnterior.disabled = capituloAtual === 0;
-            botaoProximo.disabled = capituloAtual === capitulos.length - 1;
-            indicador.textContent = `Capítulo ${capituloAtual + 1} de ${capitulos.length}`;
-            capitulos[capituloAtual].scrollIntoView({ behavior: "smooth", block: "start" });
-        };
-
         botaoAnterior.addEventListener("click", () => {
             if (capituloAtual > 0) {
                 capituloAtual -= 1;
@@ -56,6 +46,66 @@ if (historiaContainer) {
             }
         });
 
+        let typingTimer = null;
+        const typeTextHtml = (element, html, speed = 25) => {
+            if (!element) return;
+            if (typingTimer) {
+                clearTimeout(typingTimer);
+                typingTimer = null;
+            }
+
+            let index = 0;
+            let isTag = false;
+            let content = "";
+
+            const tick = () => {
+                if (index < html.length) {
+                    const char = html[index];
+                    content += char;
+                    element.innerHTML = content;
+
+                    if (char === "<") {
+                        isTag = true;
+                    } else if (char === ">") {
+                        isTag = false;
+                    }
+
+                    index += 1;
+                    typingTimer = setTimeout(tick, isTag ? 0 : speed);
+                }
+            };
+
+            element.innerHTML = "";
+            tick();
+        };
+
+        const typeCapituloTexto = (capitulo) => {
+            const paragrafo = capitulo.querySelector("p");
+            if (!paragrafo) return;
+
+            const original = paragrafo.dataset.originalHtml || paragrafo.innerHTML;
+            if (!paragrafo.dataset.originalHtml) {
+                paragrafo.dataset.originalHtml = original;
+            }
+
+            typeTextHtml(paragrafo, original);
+        };
+
+        const atualizarTela = () => {
+            capitulos.forEach((capitulo, index) => {
+                capitulo.style.display = index === capituloAtual ? "block" : "none";
+            });
+            botaoAnterior.disabled = capituloAtual === 0;
+            botaoProximo.disabled = capituloAtual === capitulos.length - 1;
+            indicador.textContent = `Capítulo ${capituloAtual + 1} de ${capitulos.length}`;
+            const activo = capitulos[capituloAtual];
+            if (activo) {
+                typeCapituloTexto(activo);
+                activo.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        };
+
         atualizarTela();
     }
 }
+        
