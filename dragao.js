@@ -32,6 +32,12 @@ if (historiaContainer) {
         controles.appendChild(indicador);
         historiaContainer.appendChild(controles);
 
+        const finalHistoria = document.querySelector(".final-historia");
+
+        if (finalHistoria) {
+            controles.insertAdjacentElement("afterend", finalHistoria);
+        }
+
         botaoAnterior.addEventListener("click", () => {
             if (capituloAtual > 0) {
                 capituloAtual -= 1;
